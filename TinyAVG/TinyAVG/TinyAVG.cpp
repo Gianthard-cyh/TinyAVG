@@ -9,7 +9,6 @@ TinyAVG::TinyAVG() :
 	m_pWICFactory(NULL)
 {
 	InitializeXMLScript();
-	m_DialogTitle = L"对话框标题"; 
 	m_bIsWaitingForSpace = true;
 }
 
@@ -192,9 +191,22 @@ void TinyAVG::InitializeXMLScript()
 	// 加载XML文档.
 	XMLerr = m_XMLDoc.LoadFile("Script.xml");
 
-	if (XMLerr == tinyxml2::XML_ERROR_FILE_NOT_FOUND) {
+	if (XMLerr == tinyxml2::XML_ERROR_FILE_NOT_FOUND || XMLerr == tinyxml2::XML_ERROR_EMPTY_DOCUMENT) {
 		// 若XML文档不存在，则弹出提示窗口后直接退出，返回-1.
-		MessageBox(NULL, "加载XML脚本失败：XML文件不存在", "错误", NULL);
+		MessageBox(NULL, "加载XML脚本失败：XML文件不存在！已重新创建Script.xml", "错误", NULL);
+
+		ofstream fout;
+
+		fout.open("Script.xml", std::ios::out);
+
+		fout << "<?xml version=\"1.0\" encoding=\"gb2312\"?>\n"
+			"<script>\n"
+			"	<block id=\"begining\">\n"
+			"\n"
+			"	</block>\n"
+			"</script>\n";
+
+		fout.close();
 
 		exit(-1);
 	}
