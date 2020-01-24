@@ -9,7 +9,9 @@
 #include"tinyxml2.h"
 #include<string>
 #include<vector>
+#include<fstream>
 
+using std::ofstream;
 using std::wstring;
 using std::vector;
 
