@@ -44,15 +44,15 @@ int WINAPI WinMain(
 	WndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	WndClass.hIcon = (HICON)LoadImage(NULL, "icon.ico", IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_LOADFROMFILE);
 	WndClass.lpszMenuName = NULL;
-	WndClass.lpszClassName = "D2Dcore";
+	WndClass.lpszClassName = "TinyAVG";
 
 	if (!RegisterClassEx(&WndClass)) {
 		return -1;
 	}
 
 	g_hwnd = CreateWindow(
-		"D2DCore",
-		"D2DCore",
+		"TinyAVG",
+		"TinyAVG",
 		WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME ^ WS_MAXIMIZEBOX,
 		CW_USEDEFAULT,
 		CW_USEDEFAULT,

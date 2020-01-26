@@ -78,8 +78,10 @@ public:
 		// 响应pause命令.
 	void XMLScriptOnpause(tinyxml2::XMLElement* pXMLElememt);
 
+		// 响应img命令.
 	void XMLScriptOnimg(tinyxml2::XMLElement* pXMLElememt);
-
+	
+		// 响应clr命令.
 	void XMLScriptOnclr(tinyxml2::XMLElement* pXMLElememt);
 
 	//----------【事件响应部分】----------//

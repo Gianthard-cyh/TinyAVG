@@ -482,7 +482,7 @@ void TinyAVG::DrawTinyAVGBitmap(TinyAVG_Bitmap& TinyAVGBitmap)
 			TinyAVGBitmap.Position.x,
 			TinyAVGBitmap.Position.y,
 			TinyAVGBitmap.Position.x + size.width,
-			TinyAVGBitmap.Position.x + size.height
+			TinyAVGBitmap.Position.y + size.height
 		),
 		TinyAVGBitmap.opacity,
 		D2D1_BITMAP_INTERPOLATION_MODE_LINEAR
